@@ -1,0 +1,22 @@
+{
+  "name": "mcp-ux-auditor",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "MCP server (local) that analyzes HTML for basic UX metrics.",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "",
+    "cheerio": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.11.0",
+    "@types/cheerio": "^0.22.35"
+  }
+}
