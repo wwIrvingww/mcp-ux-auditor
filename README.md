@@ -8,21 +8,22 @@ El objetivo de este servidor es analizar archivos HTML y generar un reporte con 
 
 ## Requisitos
 
-* Node.js 18+
+* Node.js 20+
 * npm o yarn
 
 ## Instalación
 
 ```bash
 npm install
+npm run build
 ```
 
 ## Uso
 
-Para iniciar el servidor MCP local:
+Para iniciar el servidor MCP local (desde el build):
 
 ```bash
-npm run start
+node dist/server.js
 ```
 
 El servidor se comunica por STDIO y debe ser levantado por un host MCP compatible (ej. tu chatbot anfitrión).
@@ -43,25 +44,23 @@ El servidor se comunica por STDIO y debe ser levantado por un host MCP compatibl
 ```json
 {
   "totals": {
-    "headings": { "h1": 1, "h2": 2, "h3": 3 },
-    "links": 5,
-    "buttons": 2,
-    "inputs": 1,
-    "forms": 1,
-    "images": 3
+    "headings": { "h1": 1, "h2": 0, "h3": 0 },
+    "links": 0,
+    "buttons": 1,
+    "inputs": 0,
+    "forms": 0,
+    "images": 0
   },
   "cognitiveLoad": {
-    "interactiveElements": 8,
-    "suggestion": null
+    "interactiveElements": 1,
+    "suggestion": "Muy pocos elementos interactivos; revisa si la tarea principal es clara."
   },
   "visualHierarchy": {
-    "hasSingleH1": true,
-    "suggestion": null
+    "hasSingleH1": true
   },
   "primaryActionFlow": {
     "hasPrimaryCTA": true,
-    "primaryCTAText": "Continuar",
-    "suggestion": null
+    "primaryCTAText": "Continuar"
   }
 }
 ```
